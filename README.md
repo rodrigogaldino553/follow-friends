@@ -1,6 +1,7 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
+App to implements follow unfollow users feature, you can find your friends, follow then and see their text posts
+
 application up and running.
 
 Things you may want to cover:
