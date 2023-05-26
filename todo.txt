@@ -1,14 +1,14 @@
-- config devise
+= config devise
 
-- cria user
+= cria user
 
-- add campos de nome e username pra user
+= add campos de nome e username pra user
 
-- corrige os problemas que da pra user no devise
+= corrige os problemas que da pra user no devise
 
-- configura active storage
+= configura active storage
 
-- add avatar para user
+= add avatar para user
 
 - cria helper para mostrar user_avatar
 
