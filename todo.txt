@@ -1,0 +1,23 @@
+- config devise
+
+- cria user
+
+- add campos de nome e username pra user
+
+- corrige os problemas que da pra user no devise
+
+- configura active storage
+
+- add avatar para user
+
+- cria helper para mostrar user_avatar
+
+- cria entidade post aos moldes de um tweet com rich text etc...
+
+- estiliza tudo
+
+- adiciona feature de seguir
+
+- adiciona autorização
+
+- configura pra mostrar principalmente os posts de quem vc segue
