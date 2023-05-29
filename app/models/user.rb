@@ -10,8 +10,6 @@ class User < ApplicationRecord
   has_one_attached :avatar
 
 
-  private
-
   def assign_default_role
     self.add_role(:user) if self.roles.blank?
   end
