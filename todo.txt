@@ -16,6 +16,8 @@
 
 - estiliza tudo
 
+- add validations para os models
+
 - criar uma rota pro usuario configurar apenas o perfil, como nome, avatar, status sem a necessidade mexer na senha
 
 - adiciona feature de seguir
