@@ -14,7 +14,7 @@
     <%= post.user_id %>
   </p>
 
-  <% if action_name != "show" %>
+  <% if action_name != "show" &&  policy(post).edit? %>
     <%= link_to "Show this post", post, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
     <%= link_to 'Edit this post', edit_post_path(post), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
     <hr class="mt-6">
