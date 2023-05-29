@@ -27,3 +27,5 @@
 - add comments
 
 - add notificações
+
+- criar uma rota pra admin com os posts pendendtes pra validação
