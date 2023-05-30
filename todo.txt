@@ -16,6 +16,8 @@
 
 - estiliza tudo
 
+- add policies nos controllers
+
 - add navegação
 
 - add comments

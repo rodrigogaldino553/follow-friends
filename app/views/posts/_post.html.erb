@@ -7,47 +7,39 @@
     </div>
   </div>
 
-  <div class="px-4 py-2 mt-4 bg-gray-50 border-l-2 border-blue-400">
-    <div>
-      <%= raw(post.content) %>
-    </div>
-  </div>
-
-  <div>
-    <div>
-      actions <!-- like, comment, edit, destoy -->
-    </div>
-
-    <div></div>
-
-    <% if policy(post).edit? %>
+  <%= link_to post_path(post) do %>
+    <div class="px-4 py-2 mt-4 bg-gray-50 border-l-2 border-blue-400">
       <div>
-        <%= link_to edit_post_path(post) do %>
-          edit icon
-        <% end %>
+        <%= raw(post.content) %>
       </div>
-    <% end %>
-  </div>
-</div>
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Title:</strong>
-    <%= post.title %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Content:</strong>
-    <%= post.content %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Author: </strong>
-    <%= "@#{post.user.username}" %>
-  </p>
-
-  
-  <%= link_to "Show this post", post, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
-  <% if action_name != "show" &&  policy(post).edit? %>
-    <%= link_to 'Edit this post', edit_post_path(post), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
-    <hr class="mt-6">
+    </div>
   <% end %>
+
+  <div class="flex flex-row space-x-2 mt-2">
+    <div class="flex flex-col justify-center align-middle">
+      <button class="flex justify-center align-middle rounded-full p-2 hover:bg-gray-100">
+        <i class="fa-regular fa-heart" ></i><!-- colocar verificação pra se o user tiver dado like mudar para solid vermelha -->
+      </button>
+      <span class="text-sm text-center">0</span>
+    </div>
+
+    <div class="flex flex-col justify-center align-middle">
+      <button class="flex justify-center align-middle rounded-full p-2 hover:bg-gray-100">
+        <i class="fa-regular fa-comment"></i>
+      </button>
+      <span class="text-sm text-center">0</span>
+    </div>
+
+    <div>
+      <%= link_to edit_post_path(post), class: 'flex justify-center align-middle rounded-full p-2 hover:bg-gray-100' do %>
+        <i class="fa-regular fa-pen-to-square"></i>
+      <% end %>
+    </div>
+    
+    <div>
+      <%= button_to post_path(post), method: :delete, class: 'flex justify-center align-middle rounded-full p-2 hover:bg-gray-100' do %>
+        <i class="fa-solid fa-trash" style="color: #de1212;" aria-hidden="true"></i>
+      <% end %>
+    </div>
+  </div>
 </div>
