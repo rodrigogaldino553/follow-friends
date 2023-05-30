@@ -10,13 +10,13 @@
 
 = add avatar para user
 
-- cria helper para mostrar user_avatar
+= cria helper para mostrar user_avatar
 
-- cria entidade post aos moldes de um tweet com rich text etc...
+= cria entidade post aos moldes de um tweet com rich text etc...
 
 - estiliza tudo
 
-- add policies nos controllers
+- add policies nos controllers && arrumar as policies
 
 - add navegação
 
@@ -24,7 +24,7 @@
 
 - remove title
 
-- install font awesome
+= install font awesome
 
 - add sistema de visibilidade(post publico(q todos poderiam ver), post privado(apenas o autor e seus seguidores poderiam ver))
 
