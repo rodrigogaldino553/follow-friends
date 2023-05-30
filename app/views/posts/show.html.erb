@@ -1,19 +1,17 @@
-<div class="mx-auto md:w-2/3 w-full flex">
-  <div class="mx-auto">
-    <% if notice.present? %>
-      <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
-    <% end %>
+<div class="mx-auto md:w-2/3 w-full">
+  <% if notice.present? %>
+    <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
+  <% end %>
 
-    <%= render @post %>
-
-    <% if policy(@post).edit? %>
-      <%= link_to 'Edit this post', edit_post_path(@post), class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+  <div class="flex justify-between">
+    <h3 class="mb-6 text-xl font-semibold">What <%= @post.user.name %> says</h3>
+    <%= link_to posts_path do %>
+      <i class="fa-solid fa-arrow-left"></i> home
     <% end %>
-    <% if policy(@post).destroy? %>
-      <div class="inline-block ml-2">
-        <%= button_to 'Destroy this post', post_path(@post), method: :delete, class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 font-medium" %>
-      </div>
-    <% end %>
-    <%= link_to 'Back to posts', posts_path, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
   </div>
-</div>
+
+  <%= render @post %>
+
+  <h3 class="mt-8 mb-4 text-xl font-semibold">What people think about:</h3>
+  </div>
+

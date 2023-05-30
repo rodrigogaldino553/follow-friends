@@ -10,11 +10,11 @@ class PostPolicy < ApplicationPolicy
     end
 
     def edit?
-      @record.user == @user
+      @record.user_is == @user.id # essa policy nao ta funcionando muito bem
     end
 
     def destroy?
-      @record.user == @user || @user.has_role?(:admin)
+      @record.user_id == @user.id || @user.has_role?(:admin)
     end
   end
 end
