@@ -1,4 +1,34 @@
-<div id="<%= dom_id post %>" class="w-full border-2 shadow-md">
+<div id="<%= dom_id post %>" class="w-full border-2 border-gray-100 rounded-lg shadow-md px-4 py-2 mb-2">
+  <div class="w-full flex flex-row space-x-2 ">
+    <%= image_tag user_avatar(post.user), alt: post.user.username, width: '50px', class: 'rounded-full object-cover' %>
+    <div class="flex flex-col text-sm font-semibold">
+      <%= post.user.username %> <br>
+      <span class="text-gray-400"><%= time_ago_in_words(post.created_at) %></span>
+    </div>
+  </div>
+
+  <div class="px-4 py-2 mt-4 bg-gray-50 border-l-2 border-blue-400">
+    <div>
+      <%= raw(post.content) %>
+    </div>
+  </div>
+
+  <div>
+    <div>
+      actions <!-- like, comment, edit, destoy -->
+    </div>
+
+    <div></div>
+
+    <% if policy(post).edit? %>
+      <div>
+        <%= link_to edit_post_path(post) do %>
+          edit icon
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>
   <p class="my-5">
     <strong class="block font-medium mb-1">Title:</strong>
     <%= post.title %>

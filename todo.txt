@@ -16,6 +16,16 @@
 
 - estiliza tudo
 
+- add navegação
+
+- add comments
+
+- remove title
+
+- install font awesome
+
+- add sistema de visibilidade(post publico(q todos poderiam ver), post privado(apenas o autor e seus seguidores poderiam ver))
+
 - add validations para os models
 
 - criar uma rota pro usuario configurar apenas o perfil, como nome, avatar, status sem a necessidade mexer na senha
