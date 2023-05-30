@@ -22,7 +22,7 @@
 
 - add comments
 
-- remove title
+= remove title
 
 = install font awesome
 
