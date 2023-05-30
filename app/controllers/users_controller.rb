@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: %i[ show edit ]
-  skipt_before_action :authenticate_user!, only: %i[index show]
+  skip_before_action :authenticate_user!, only: %i[index show]
 
   def index
     @users = User.all
@@ -15,7 +15,7 @@ class UsersController < ApplicationController
   private
 
   def set_user
-    @user = User.find_by(permalink: params[:permalink])
+    @user = User.find(params[:id])
   end
 
   def user_params
