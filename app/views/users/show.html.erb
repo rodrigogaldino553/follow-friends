@@ -30,9 +30,15 @@
       </div>
     </div>
   </div>
-
-  <div>
-    <!-- share fulano's profile [QRCODE HERE] -->
+<br>
+<hr>
+<br>
+<br>
+  <div class="mt-8 mb-6 w-full flex flex-col justify-center items-center">
+    <h3 class="text-xl font-semibold mb-6">Share <%= @user.name %>'s profile</h3>
+    <div class="qrcode-container">
+      <%= raw(share_qrcode(@user)) %>
+    </div>
   </div>
   
 </div>
