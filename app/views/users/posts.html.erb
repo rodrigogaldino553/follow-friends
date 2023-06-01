@@ -3,10 +3,13 @@
     <%= link_to root_path, class: 'block' do %>
       <i class="fa-solid fa-arrow-left"></i> home
     <% end %>
-    <h3 class="text-2xl font-semibold">Editing Profile</h3>
+    <h3 class="text-2xl font-semibold"><%= @user.name %>'s posts</h3>
     <div></div>
   </div>
   <div class="flex flex-col mx-auto w-2/3">
-    <%= render 'form', user: @user %>
+    <% @posts.each do |post| %>
+      <%= render post %>
+      <br>
+    <% end %>
   </div>
 </div>

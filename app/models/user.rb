@@ -8,6 +8,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_one_attached :avatar
+  has_many :posts
 
 
   def assign_default_role

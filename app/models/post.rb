@@ -4,4 +4,5 @@ class Post < ApplicationRecord
 
   scope :approved_posts, -> { where(:approved => true) }
   scope :unapproved_posts, -> { where(:approved => false) }
+  scope :user_posts, -> (user){ where(:user_id => user) }
 end
