@@ -9,10 +9,10 @@
   </div>
   <div class="w-2/3 mx-auto">
     <div class="flex flex-col justify-center items-center space-y-2 mb-2">
-      <%= image_tag user_avatar(@user), alt: @user.name, width: '100px', class: 'rounded-full' %>
+      <%= image_tag user_avatar(@user), alt: @user.name, width: '100px', height: '100px', class: 'rounded-full object-cover' %>
       <div>
         <h1 class="font-bold text-2xl"><%= @user.name %>'s profile</h1>
-        <h6 class="font-medium">
+        <h6 class="font-medium text-center">
           Vulgo: <span class="text-gray-500 "><%= @user.username %></span>
         </h6>
       </div>
@@ -49,6 +49,16 @@
         <%= raw(share_qrcode(@user)) %>
       </div>
     </div>
-    
+  <br>
+  <br>
+  <hr>
+    <div class="w-full">
+      <%= link_to users_edit_path(@user), class: 'block w-full py-2 rounded-md text-center bg-blue-600 text-white hover:bg-blue-800' do %>
+        <i class="fa-solid fa-user-pen"></i><span class="ml-1">Edit your profile</span>
+      <% end %>
+    </div>
+  <br>
+  <br>
+  <br>
   </div>
 </div>

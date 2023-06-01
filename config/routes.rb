@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   get '/users', to: 'users#index', as: 'users_index'
   get '/users/:id/show', to: 'users#show', as: 'users_show'
   get '/users/:id/edit', to: 'users#edit', as: 'users_edit'
+  put '/users/:id/update', to: 'users#update', as: 'users_update'
   get '/users/:id/posts', to: 'users#posts', as: 'users_posts'
 
   get '/welcome/index'
