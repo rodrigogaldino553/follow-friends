@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
   resources :posts do
-    get :unapproved_posts
+    member do
+      get :unapproved_posts
+    end
   end
+  # get '/posts/unapproved', to: 'posts#unapproved', as: 'unapproved_posts'
 
   devise_for :users, controllers: {
         registrations: 'users/registrations'
