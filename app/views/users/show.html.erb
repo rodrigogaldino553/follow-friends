@@ -1,0 +1,64 @@
+<div class="mx-auto w-3/4  flex flex-col -mt-8 mb-6">
+  <div class="w-full mb-10 flex justify-between">
+    <%= link_to root_path, class: 'block' do %>
+      <i class="fa-solid fa-arrow-left"></i> home
+    <% end %>
+    <%= link_to users_posts_path, class: 'block' do %>
+      <%= @user.name %>'s posts <i class="fa-solid fa-arrow-right"></i> 
+    <% end %>
+  </div>
+  <div class="w-2/3 mx-auto">
+    <div class="flex flex-col justify-center items-center space-y-2 mb-2">
+      <%= image_tag user_avatar(@user), alt: @user.name, width: '100px', height: '100px', class: 'rounded-full object-cover' %>
+      <div>
+        <h1 class="font-bold text-2xl"><%= @user.name %>'s profile</h1>
+        <h6 class="font-medium text-center">
+          Vulgo: <span class="text-gray-500 "><%= @user.username %></span>
+        </h6>
+      </div>
+    </div>
+    
+    <hr>
+    <div class="mt-4 space-y-2">
+      <h2 class="text-2xl mb-4 font-semibold">About <%= @user.name %></h2>
+      <div class="ml-2">
+        <div class="font-sans px-4 py-2 mt-4 bg-gray-50 border-l-2 border-blue-400">
+          <div>
+            <%= @user.status %>
+          </div>
+        </div>
+
+        <div class="text-gray-500 font-medium mt-2">Here about <%= time_ago_in_words(@user.created_at) %>...</div>
+      </div>
+      <div class="mt-4">
+        <h4 class="text-lg font-semibold">Contacts</h4>
+        <div class="ml-2">
+          <div class="mt-2">
+            <%= @user.email %>
+          </div>
+        </div>
+      </div>
+    </div>
+  <br>
+  <hr>
+  <br>
+  <br>
+    <div class="mt-8 mb-6 w-full flex flex-col justify-center items-center">
+      <h3 class="text-xl font-semibold mb-6">Share <%= @user.name %>'s profile</h3>
+      <div class="qrcode-container">
+        <%= raw(share_qrcode(@user)) %>
+      </div>
+    </div>
+  <br>
+  <br>
+  <hr>
+    <div class="w-full">
+      <%= link_to users_edit_path(@user), class: 'block w-full py-2 rounded-md text-center bg-blue-600 text-white hover:bg-blue-800' do %>
+        <i class="fa-solid fa-user-pen"></i><span class="ml-1">Edit your profile</span>
+      <% end %>
+    </div>
+  <br>
+  <br>
+  <br>
+  </div>
+</div>

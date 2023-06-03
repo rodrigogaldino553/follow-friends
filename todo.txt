@@ -43,3 +43,5 @@
 - add notificações
 
 - criar uma rota pra admin com os posts pendendtes pra validação
+
+- qrcode pra compartilhar a pagina do usuário
