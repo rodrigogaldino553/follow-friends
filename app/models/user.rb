@@ -15,6 +15,10 @@ class User < ApplicationRecord
     self.add_role(:user) if self.roles.blank?
   end
 
+  def assign_role(role)
+    self.add_role(role)
+  end
+
   def username
     self.email.split(/@/).first
   end

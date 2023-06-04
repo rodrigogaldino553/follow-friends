@@ -24,18 +24,21 @@
         </button>
         <span class="text-sm text-center">0</span>
       </div>
+      <% if policy(post).edit? %>
+        <div>
+          <%= link_to edit_post_path(post), class: 'flex justify-center align-middle rounded-full p-2 hover:bg-gray-100' do %>
+            <i class="fa-regular fa-pen-to-square"></i>
+          <% end %>
+        </div>
+      <% end %>
 
-      <div>
-        <%= link_to edit_post_path(post), class: 'flex justify-center align-middle rounded-full p-2 hover:bg-gray-100' do %>
-          <i class="fa-regular fa-pen-to-square"></i>
-        <% end %>
-      </div>
-      
-      <div>
-        <%= button_to post_path(post), method: :delete, class: 'flex justify-center align-middle rounded-full p-2 hover:bg-gray-100' do %>
-          <i class="fa-solid fa-trash" style="color: #de1212;" aria-hidden="true"></i>
-        <% end %>
-      </div>
+      <% if policy(post).destroy? %>
+        <div>
+          <%= button_to post_path(post), method: :delete, class: 'flex justify-center align-middle rounded-full p-2 hover:bg-gray-100' do %>
+            <i class="fa-solid fa-trash" style="color: #de1212;" aria-hidden="true"></i>
+          <% end %>
+        </div>
+      <% end %>
     </div>
     <div class="text-sm text-medium text-gray-400">
       <%= time_ago_in_words(post.created_at) %> ago

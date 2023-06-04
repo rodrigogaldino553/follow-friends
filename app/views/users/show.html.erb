@@ -51,12 +51,14 @@
     </div>
   <br>
   <br>
-  <hr>
+  <% if policy(@user).edit? %>
+    <hr>
     <div class="w-full">
       <%= link_to users_edit_path(@user), class: 'block w-full py-2 rounded-md text-center bg-blue-600 text-white hover:bg-blue-800' do %>
         <i class="fa-solid fa-user-pen"></i><span class="ml-1">Edit your profile</span>
       <% end %>
     </div>
+  <% end %>
   <br>
   <br>
   <br>

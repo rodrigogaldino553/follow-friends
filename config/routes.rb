@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   get '/users/:id/edit', to: 'users#edit', as: 'users_edit'
   put '/users/:id/update', to: 'users#update', as: 'users_update'
   get '/users/:id/posts', to: 'users#posts', as: 'users_posts'
+  get '/users/:id/assign_role', to: 'users#assign_role', as: 'users_assign_role'
 
   get '/welcome/index'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
