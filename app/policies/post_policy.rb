@@ -11,7 +11,11 @@ class PostPolicy < ApplicationPolicy
   end
 
   def edit?
-    @record.user == @user # essa policy nao ta funcionando muito bem
+    update?
+  end
+
+  def update?
+    @record.user == @user
   end
 
   def destroy?
