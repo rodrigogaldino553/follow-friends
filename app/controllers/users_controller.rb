@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: %i[ show edit update posts ]
+  before_action :set_user, only: %i[ show edit update posts assign_role ]
   skip_before_action :authenticate_user!, only: %i[index show posts]
 
   def index
@@ -26,6 +26,10 @@ class UsersController < ApplicationController
 
   def posts
     @posts = Post.user_posts(@user)
+  end
+
+  def assign_role
+    @user.assign_role(:checked)
   end
 
   private
