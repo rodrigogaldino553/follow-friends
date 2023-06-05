@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   resources :posts do
+    resources :comments, except: %i[index]
     member do
       get :unapproved_posts
     end
