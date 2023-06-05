@@ -7,7 +7,7 @@
     <div></div>
   </div>
   <div class="flex flex-col mx-auto w-2/3">
-    <% if @posts.size > 1 %>
+    <% if @posts.size > 0 %>
       <% @posts.each do |post| %>
         <%= render post %>
         <br>
