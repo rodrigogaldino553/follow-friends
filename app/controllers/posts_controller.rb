@@ -10,6 +10,7 @@ class PostsController < ApplicationController
   # GET /posts/1 or /posts/1.json
   def show
     authorize @post
+    @post_comments = @post.comments
   end
 
   # GET /posts/new

@@ -13,5 +13,18 @@
   <%= render @post %>
 
   <h3 class="mt-8 mb-4 text-xl font-semibold">What people think about:</h3>
-  </div>
+  <br>
+  <br>
+  <%= render 'posts/comments/form', post: @post %>
 
+  <br>
+  <br>
+  <% @post_comments.each do |comment| %>
+    <%= render 'posts/comments/comment', comment: comment%>
+  <% end %>
+  </div>
+  <br>
+  <br>
+  <br>
+  <br>
+</div>
