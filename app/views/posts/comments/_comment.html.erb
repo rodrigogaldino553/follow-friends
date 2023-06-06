@@ -1,5 +1,11 @@
-<div class="border-2 border-gray-300 shadow-md rounded-md">
-  <%= comment.content %> <br>
-  @<%= comment.user.username %> <br>
-  <%= time_ago_in_words(comment.created_at) %> ago
+<div class="border-2 border-gray-300 shadow-md rounded-md px-4 py-2 mb-4">
+  <%= render comment.user %>
+  <div class="font-sans px-4 py-2 mt-4 bg-gray-50 border-l-2 border-blue-400">
+    <div>
+      <%= comment.content %>
+    </div>
+  </div>
+  <div class="text-sm text-medium text-gray-400">
+    <%= time_ago_in_words(comment.created_at) %> ago
+  </div>
 </div>
