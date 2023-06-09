@@ -1,4 +1,4 @@
-<div class="mx-auto w-3/4  flex flex-col -mt-8 mb-6">
+<div class="mx-auto sm:w-3/4  flex flex-col -mt-8 mb-6">
   <div class="w-full mb-10 flex justify-between">
     <%= link_to root_path, class: 'block' do %>
       <i class="fa-solid fa-arrow-left"></i> home
@@ -7,7 +7,7 @@
       <%= @user.name %>'s posts <i class="fa-solid fa-arrow-right"></i> 
     <% end %>
   </div>
-  <div class="w-2/3 mx-auto">
+  <div class="sm:w-2/3 mx-auto">
     <div class="flex flex-col justify-center items-center space-y-2 mb-2">
       <%= image_tag user_avatar(@user), alt: @user.name, width: '100px', height: '100px', class: 'rounded-full object-cover' %>
       <div>

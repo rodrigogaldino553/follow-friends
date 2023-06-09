@@ -1,7 +1,7 @@
 <div class="w-full flex items-center">
   <%= link_to users_show_path(user), class: 'w-full' do %>
     <div class="flex flex-row space-x-2">
-      <%= image_tag user_avatar(user), alt: user.username, width: '50px', class: 'rounded-full object-cover' %>
+      <%= image_tag user_avatar(user), alt: user.username, width: '50px', height: '50px', class: 'rounded-full object-cover' %>
       <div class="flex flex-col text-sm font-semibold">
         <%= user.name %> <br>
         <span class="text-gray-400"><%= user.username %></span>
