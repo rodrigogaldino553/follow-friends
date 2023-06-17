@@ -4,7 +4,7 @@ class PostsController < ApplicationController
 
   # GET /posts or /posts.json
   def index
-    @posts = Post.approved_posts
+    @posts = Post.approved_posts.order(created_at: :desc)
   end
 
   # GET /posts/1 or /posts/1.json
