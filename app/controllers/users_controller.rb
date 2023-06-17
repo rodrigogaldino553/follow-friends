@@ -25,7 +25,7 @@ class UsersController < ApplicationController
   end
 
   def posts
-    @posts = Post.user_posts(@user)
+    @posts = Post.user_posts(@user).order(created_at: :at) # o correto seria o posts controller fazer isso
   end
 
   def assign_role

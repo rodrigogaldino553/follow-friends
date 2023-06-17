@@ -65,7 +65,7 @@ class PostsController < ApplicationController
   end
 
   def unapproved_posts
-    @posts = Post.unapproved_posts
+    @posts = Post.unapproved_posts.order(created_at: :desc)
   end
 
   private
