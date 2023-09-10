@@ -11,6 +11,13 @@ Rails.application.routes.draw do
         registrations: 'users/registrations'
       }
 
+  resources :users
+  post '/users/:id/follow', to: "users#follow", as: "follow_user"
+  post '/users/:id/unfollow', to: "users#unfollow", as: "unfollow_user"
+  get '/users/:id/followers', to: "users#followers", as: "user_followers"
+  get '/users/:id/followees', to: "users#followees", as: "user_followees"
+
+
   get '/users', to: 'users#index', as: 'users_index'
   get '/users/:id/show', to: 'users#show', as: 'users_show'
   get '/users/:id/edit', to: 'users#edit', as: 'users_edit'
