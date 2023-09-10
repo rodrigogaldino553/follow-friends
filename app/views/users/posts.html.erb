@@ -12,6 +12,9 @@
         <%= render post %>
         <br>
       <% end %>
+    <% elsif current_user == current_user %>
+      <h2 class="text-xl font-semibold">You don't post anyting yet!</h2>
+      <%= link_to 'make your first post!', new_post_path %>
     <% else %>
       <h2 class="text-xl font-semibold"><%= @user.name %> doesnt post yet!</h2>
     <% end %>

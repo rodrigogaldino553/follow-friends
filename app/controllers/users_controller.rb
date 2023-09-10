@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: %i[ show edit update posts assign_role ]
+  before_action :set_user, only: %i[ show edit update posts assign_rolen follow ]
   skip_before_action :authenticate_user!, only: %i[index show posts]
 
   def index
@@ -25,11 +25,23 @@ class UsersController < ApplicationController
   end
 
   def posts
-    @posts = Post.user_posts(@user).order(created_at: :at) # o correto seria o posts controller fazer isso
+    @posts = Post.user_posts(@user).order(created_at: :desc) # o correto seria o posts controller fazer isso
   end
 
   def assign_role
     @user.assign_role(:checked)
+  end
+
+  def follow 
+    # @user = User.find_by(params[:id])
+    current_user.followees << @user
+    redirect_back(fallback_location: user_path(@user))
+  end
+  
+  def unfollow
+    # @user = User.find(params[:id])
+    current_user.followed_users.find_by(followee_id: @user.id).destroy
+    redirect_back(fallback_location: user_path(@user))
   end
 
   private

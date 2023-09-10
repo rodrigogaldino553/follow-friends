@@ -82,3 +82,5 @@ gem "pundit", "~> 2.3"
 gem "rolify", "~> 6.0"
 
 gem "rqrcode", "~> 2.2"
+
+gem "faker", "~> 3.2"

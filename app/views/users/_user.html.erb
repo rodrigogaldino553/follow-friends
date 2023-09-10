@@ -8,6 +8,7 @@
       </div>
     </div> 
   <% end %>
+  <%= follow(user)%>
   <% unless current_user == user %>
     <button class="px-4 flex h-7 justify-center items-center space-x-2 text-center text-sm font-semibold border-2 border-blue-600 bg-white text-blue-600 rounded-lg hover:bg-blue-600 hover:text-white">
     <i class="fa-solid fa-user-plus" ></i><span class="mr-1">follow</span></button>

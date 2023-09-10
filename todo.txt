@@ -38,10 +38,10 @@
 
 - configura pra mostrar principalmente os posts de quem vc segue
 
-- add comments
+= add comments
 
 - add notificações
 
 - criar uma rota pra admin com os posts pendendtes pra validação
 
-- qrcode pra compartilhar a pagina do usuário
+= qrcode pra compartilhar a pagina do usuário
